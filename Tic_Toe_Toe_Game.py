@@ -2,6 +2,8 @@ import turtle
 import sys
 import numpy as np
 
+#turtle to draw the initial boxes
+
 turtle.speed(0)
 turtle.bgcolor("white")
 turtle.pencolor("black")
@@ -34,6 +36,7 @@ def draw_maze():
 draw_maze()
 turtle.penup()
 
+#function insert checks the position of symbol and marks it in respective array
 def insert(x,y,col):
     global count
     if -100<=x<0 and -100<=y<0 and col==1:
@@ -148,6 +151,8 @@ def insert(x,y,col):
         else:
             count=count+1
 
+#func check() checks for the winning logic of game for either player.
+#It also checks for invalid move or game draw
 
 def check():
     global sw
@@ -188,6 +193,10 @@ def check():
             print "Game Draw"
             turtle.done()
             exit()
+
+#func blue color is for both players. It checks the coordinate and mark color.
+#It then calls insert and that logic is performed
+            
 def bluecol():
     global count
     global turn
@@ -208,6 +217,8 @@ def bluecol():
         print "Match is draw"
         turtle.done()
         exit()
+
+        
 ##def greencol():
 ##    global count
 ##    turtle.pendown()
@@ -221,6 +232,8 @@ def bluecol():
 ##        print "Match is draw"
 ##        turtle.done()
 ##        exit()
+
+        
 turtle.onscreenclick(turtle.goto)
 turtle.onkey(bluecol,"a")
 #turtle.onkey(greencol,"b")
